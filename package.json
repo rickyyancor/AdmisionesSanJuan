@@ -6,8 +6,10 @@
   "dependencies": {
     "async": "^2.5.0",
     "bluebird": "^3.5.1",
+    "exceljs": "^0.6.2",
     "express": "^4.16.1",
     "mssql": "^4.1.0",
+    "node-gyp": "^3.6.2",
     "node-msoffice-pdf": "0.0.7",
     "socket.io": "^2.0.3",
     "tedious": "^2.0.0"
