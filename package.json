@@ -1,0 +1,22 @@
+{
+  "name": "provisional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^2.5.0",
+    "bluebird": "^3.5.1",
+    "express": "^4.16.1",
+    "mssql": "^4.1.0",
+    "node-msoffice-pdf": "0.0.7",
+    "socket.io": "^2.0.3",
+    "tedious": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Ricky Yancor",
+  "license": "ISC"
+}
