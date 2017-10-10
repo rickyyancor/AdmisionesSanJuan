@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emergencia</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="socket.io.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+      <link rel="stylesheet" href="mdl/material.min.css">
+  </head>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">HOSPITAL SAN JUAN DE DIOS</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer">
+
+      </div>
+      <!-- Navigation. We hide it in small screens. -->
+
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Urgencias</span>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+
+      <br><br>
+      <h3>Hoja de Urgencias:</h3> <br>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="apellido1"  >
+        <label class="mdl-textfield__label" for="apellido1">Primer apellido</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="apellido2"  >
+        <label class="mdl-textfield__label" for="apellido2">Segundo apellido</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="nombre1"  >
+        <label class="mdl-textfield__label" for="nombre1">Primer nombre</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="nombre2"  >
+        <label class="mdl-textfield__label" for="nombre1">Segundo nombre</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="numero_expediente"  >
+        <label class="mdl-textfield__label" for="numero_expediente">No. de Expediente</label> <!--campo1-->
+      </div><br>
+      Fecha nacimiento: <input type='date' id="fecha_nac" placeholder="Fecha de nacimiento">
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="edad"  >
+        <label class="mdl-textfield__label" for="edad">Edad</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="lugar_nacimiento"  >
+        <label class="mdl-textfield__label" for="lugar_nacimiento">Lugar de nacimiento</label> <!--campo1-->
+      </div>
+
+      Sexo: <select id="sexo">
+        <option value="MASCULINO">Masculino</option>
+        <option value="FEMENINO">Femenino</option>
+      </select>
+      <br>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="estado_civil"  >
+        <label class="mdl-textfield__label" for="estado_civil">Estado civil</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="ocupacion"  >
+        <label class="mdl-textfield__label" for="ocupacion">Ocupacion</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="nacionalidad"  >
+        <label class="mdl-textfield__label" for="nacionalidad">Nacionalidad</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="documento_identificacion"  >
+        <label class="mdl-textfield__label" for="documento_identifiacion">Documento de identificacion</label> <!--campo1-->
+      </div>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="caso_emergencia"  >
+        <label class="mdl-textfield__label" for="caso_emergencia">En caso de emergencia notificar a: </label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="parentesco"  >
+        <label class="mdl-textfield__label" for="parentesco">Parentesco</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="direccion"  >
+        <label class="mdl-textfield__label" for="direccion">Direccion</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="telefono"  >
+        <label class="mdl-textfield__label" for="telefono">Telefono</label> <!--campo1-->
+      </div>
+
+      Fecha de la asistencia medica: <input type='date' id="fecha_asistencia" >
+      Hora: <input type='time' id="hora" placeholder="Hora" >
+      <br>
+      Area Urgencia: <select id="area_urgencia">
+        <option value="medicina">MEDICINA</option>
+        <option value="cirujia">CIRUGIA</option>
+        <option value="trauma">TRAUMA</option>
+        <option value="obstetricia">OBSTETRICIA</option>
+        <option value="gine">GINE</option>
+      </select>
+
+      Tipo de consulta: <select id="tipo_consulta">
+        <option value="urgencia">URGENCIA</option>
+        <option value="consulta_externa">CONSULTA EXTERNA EXTEMPORANEA</option>
+      </select>
+      <br><br><br>
+
+
+
+      <input type='text'style='width:800px; height:100px' id="motivo_consulta" placeholder="Motivo de consulta">
+      <input type='text' style='width:800px; height:100px'id="historia_enfermedad" placeholder="Historia de la enfermedad"><br>
+      <input type='text'style='width:800px; height:100px' id="examen_fisico" placeholder="Examen fisico">
+
+      <br><br>
+
+      <div class="mdl-layout-spacer">
+
+
+      <button id="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+  Enviar
+</button>
+</div>
+      <br><br>
+
+
+
+
+
+
+
+
+
+
+      <!-- Your content ENDS here --></div>
+  </main>
+</div>
+<!--aqui inicia el layout-->
+
+<script type="text/javascript" src="mdl/material.min.js"></script>
+  </body>
+</html>

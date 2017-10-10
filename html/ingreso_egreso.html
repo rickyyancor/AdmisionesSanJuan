@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ingresos</title>
+    <link rel="stylesheet" href="mdl/material.min.css">
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="socket.io.js"></script>
+
+    <script type="text/javascript" src="script0.js"></script>
+
+  </head>
+
+  <body>
+    <!-- Uses a header that scrolls with the text, rather than staying
+      locked at the top -->
+    <div class="mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">HOSPITAL GENERAL SAN JUAN DE DIOS</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Ingresos</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+
+
+      <br>
+      <h3>Hoja de ingresos y egresos:</h3>
+      <br>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n1"  >
+        <label class="mdl-textfield__label" for="apellido1">Primer apellido</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n2"  >
+        <label class="mdl-textfield__label" for="apellido2">Segundo apellido</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n3"  >
+        <label class="mdl-textfield__label" for="nombre1">Primer nombre</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n4"  >
+        <label class="mdl-textfield__label" for="nombre1">Segundo nombre</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n5"  >
+        <label class="mdl-textfield__label" for="numero_expediente">No. de Expediente</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n6"  >
+        <label class="mdl-textfield__label" for="direccion">Direccion actual</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n7"  >
+        <label class="mdl-textfield__label" for="calle">Calle o lugar</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n8"  >
+        <label class="mdl-textfield__label" for="municipio">Municipio</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n9"  >
+        <label class="mdl-textfield__label" for="departamento">Departamento</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n10"  >
+        <label class="mdl-textfield__label" for="telefono">Telefono</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n11"  >
+        <label class="mdl-textfield__label" for="direccion">Direccion habitual</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n12"  >
+        <label class="mdl-textfield__label" for="calle">Calle o lugar</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n13"  >
+        <label class="mdl-textfield__label" for="municipio">Municipio</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n14"  >
+        <label class="mdl-textfield__label" for="departamento">Departamento</label> <!--campo1-->
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type='text' id="n15"  >
+        <label class="mdl-textfield__label" for="telefono">Telefono</label> <!--campo1-->
+      </div>
+      <div>
+
+      Fecha de nacimiento:
+       <input type='date' id="n16"><!--campo1-->
+
+      </div>
+
+       <input type='text' id="n17" placeholder="Edad">
+       <input type='text' id="n18" placeholder="Lugar de nacimiento">
+       Estado civil:
+       <select name="estadoCivil" id="n20">
+         <option value="Casado">Casado/a</option>
+         <option value="Soltero">Soltero/a</option>
+         <option value="Viudo">Viudo/a</option>
+         <option value="Divorciado">Divorciado/a</option>
+         <option value="Separado">Separado/a</option>
+       </select>
+       Sexo: <select id=n19>
+         <option value="MASCULINO">Masculino</option>
+         <option value="FEMENINO">Femenino</option>
+       </select>
+
+       <input type='text' id="n21" placeholder="Ocupacion">
+       <input type='text' id="n22" placeholder="Nacionalidad">
+       <input type='text' id="n23" placeholder="Documento de identificacion">
+        <input type='text' id="n24" placeholder="Nombre del conyugue">
+       <input type='text' id="n25" placeholder="Direccion si difiere a la indicada">
+       <input type='text' id="n26" placeholder="Nombre del padre">
+       <input type='text' id="n27" placeholder="Nombre de la madre">
+       <input type='text' id="n28" placeholder="En caso de emergencia notificar a ">
+       <input type='text' id="n29" placeholder="Parentesco">
+       <input type='text' id="n30" placeholder="Direccion">
+       <input type='text' id="n31" placeholder="Teléfono">
+       <br><br>
+       <input type='text' id="n32" placeholder="Otras hospitalizaciones">
+       <input type='text' id="n33" placeholder="Referido de"><br><br>
+       Fecha de ingreso: <input type='date' id="n34" >
+       <input type='text' id="n35" placeholder="Hora">
+       <input type='text' id="n36" placeholder="Servicio">
+
+
+
+       <!--<input type='text' id="area_urgencia">-->
+
+       <br><br>
+      <button id="btn"style='width:200px; height:100px' >Insertar</button>
+
+
+
+
+
+
+
+
+
+
+        <!-- Your content goes here --></div>
+      </main>
+    </div>
+    <!--insertando layout--------->
+<script type="text/javascript" src="mdl/material.min.js"></script>
+  </body>
+</html>
