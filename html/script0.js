@@ -51,9 +51,11 @@ $(function() {
 
 
       });
-      socket.on('limpiar', function () {
+      socket.on('limpiar', function () {window.open("http://10.10.11.150:3000/Admision");
         alert("Guardado")
+
           location.href="http://10.10.11.150:3000/ingreso";
+
 
 
         });

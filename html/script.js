@@ -28,7 +28,7 @@ $(function() {
 
 
             };
-              socket.emit('pruebainsertar',jsondata);
+              socket.emit('prueba',jsondata);
             });
 
     socket.on('respuesta', function () {
