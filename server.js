@@ -9,6 +9,7 @@ var Request = require('tedious').Request;
 var Excel = require('exceljs');
 var workbook = new Excel.Workbook();
 var msopdf = require('node-msoffice-pdf');
+require('console-stamp')(console, '[HH:MM:ss]');
 app.use('/mdl', express.static(__dirname + '/html/mdl'));
 
 app.get('/', function (req, res) {
