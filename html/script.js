@@ -28,7 +28,7 @@ $(function() {
 
 
             };
-              socket.emit('prueba',jsondata);
+              socket.emit('pruebainsertar',jsondata);
             });
 
     socket.on('respuesta', function () {
@@ -37,6 +37,7 @@ $(function() {
 
       });
       socket.on('limpiar', function () {
+        window.open("http://10.10.11.150:3000/downloademe");
         alert("Guardado")
           location.href="http://10.10.11.150:3000/emergencia.html";
 
