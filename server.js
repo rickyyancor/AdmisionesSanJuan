@@ -11,6 +11,7 @@ var workbook = new Excel.Workbook();
 var msopdf = require('node-msoffice-pdf');
 require('console-stamp')(console, '[HH:MM:ss]');
 app.use('/mdl', express.static(__dirname + '/html/mdl'));
+app.use('/materialize', express.static(__dirname + '/html/materialize'));
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
@@ -95,6 +96,7 @@ var Connection = require('tedious').Connection;
 
 io.on('connection', function (socket) {
 
+
   socket.on('prueba', function (data) {
 
 
@@ -143,6 +145,10 @@ connection.on('connect', function(err) {
   }
     // If no error, then good to proceed.
     console.log("Connected");
+    var socketId = socket.id;
+      var clientIp = socket.request.connection.remoteAddress;
+
+      console.log("Registro Emergencia desde : "+clientIp);
     var s="','";
     console.log(s);
  var cadena="INSERT into Emergencia values('"+data.apellido1+s+data.apellido2+s;
@@ -287,6 +293,10 @@ if (err) {
 }
   // If no error, then good to proceed.
   console.log("Connected");
+  var socketId = socket.id;
+    var clientIp = socket.request.connection.remoteAddress;
+
+    console.log("Registro Ingreso  desde : "+clientIp);
   var s="','";
   console.log(s);
 var cadena="INSERT into Ingresos values('"+data.n1+s+data.n2+s+data.n3+s+data.n4+s+data.n5+s+data.n6+s+data.n7+s+data.n8+s+data.n9+s+data.n10+s+data.n11+s+data.n12+s+data.n13+s+data.n14+s+data.n15+s+data.n16;
