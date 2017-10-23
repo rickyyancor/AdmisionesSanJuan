@@ -1,7 +1,28 @@
 $(function() {
     var socket = io();
+
+    $("#btn_limpiar").click(function(){
+
+        location.href="http://10.10.11.150:3000/ingreso";
+    });
     $("#btn").click(function()
             {
+
+
+              var fecha_nacimiento=  $("#n16").val();
+              var sexo_o =$("#n19").val();
+              var lugar_de_nacimiento =$("#n18").val();
+              var edad=$("#n17").val();
+              var nombremadre=$("#27").val();
+              var nombrepadre=$("#26").val();
+              console.log(sexo_o);
+              if(fecha_nacimiento==''||sexo_o==null||lugar_de_nacimiento==''||edad==''||nombrepadre==''||nombremadre=='')
+              {
+                alert("Campos invalidos revise los campos en rojo! NO DEBEN DE ESTAR VACIOS");
+
+              }
+              else
+              {
               var data = $("#fecha_nac").val();
 
               var jsondata={n1:$("#n1").val(),
@@ -38,27 +59,77 @@ $(function() {
               n36:$("#n36").val(),
 
 
-
-
-
-
             };
-              socket.emit('insertar_ingreso',jsondata);
+            console.log("aca");
+            $("#btn").text("TRABAJANDO ESPERE");
+            $("#btn").attr("disabled", true);
+              socket.emit('insertar_ingreso',jsondata);}
+
             });
+            $("#btn_consulta").click(function()
+                    {
+
+                      var jsondata={apellido1:$("#c_apellido1").val(),
+                      apellido2:$("#c_apellido2").val(),no_cedula:$("#c_documento_identificacion").val()
+
+                    };
+                      socket.emit('consultar',jsondata);
+                      console.log('emit de consultar')
+
+
+                    });
+
+                    socket.on('resultado_consulta',function(data){
+                      console.log("resultado_consulta");
+                      console.log((data));
+                      //var datos=data.Datos_Consulta[0];
+                      //console.log(JSON.stringify(datos));
+
+                      $("#paratabla").html(data);
+
+
+                      $(".boton_imprimir").click(function(){
+
+                          var valores="";
+                          var registro=$(this).parents("tr").find("td");
+
+                          $(this).parents("tr").find("td").each(function(){
+                              valores+=$(this).html()+"*";
+                              console.log($(this).html());
+                          });
+                          var mostrar=valores.toString().replace("<img src=\"materialize/impresora.png\" alt=\"Imprimir\" width=\"50px\" height=\"50px\">","").replace('<font color="red">','').replace('<font></font></font>','');
+
+                          socket.emit('imprimir_anterior',mostrar);
+                          alert("ESPERE! En unos segundos se abrira el documento.");
+
+                      });
+
+
+
+                    });
+
+
+
+
 
     socket.on('respuesta', function () {
         console.log("respuesta");
 
 
       });
-      socket.on('limpiar', function () {
-        window.open("http://10.10.11.150:3000/download");
+      socket.on('limpiar', function (data) {
+
         alert("Guardado")
 
           location.href="http://10.10.11.150:3000/ingreso";
-
+          window.open("http://10.10.11.150:3000/reportes/I"+data+".pdf");
 
 
         });
+        socket.on('impresion_consulta', function (data) {
 
+          window.open("http://10.10.11.150:3000/reportes/RI"+data+".pdf");
+
+
+          });
 });

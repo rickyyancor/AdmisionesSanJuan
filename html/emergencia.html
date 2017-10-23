@@ -20,10 +20,52 @@
    <a class="brand-logo center">HOSPITAL GENERAL SAN JUAN DE DIOS</a>
   </div>
 </nav><!--barra superior--->
+<a id="btn_limpiar" class="waves-effect waves-green btn  btn-floating-large pulse  blue darken-1 btn tooltipped" data-position="right" data-delay="50" data-tooltip="Limpiar">Limpiar</a>
+
+
 <div class="container">
   <div class="row">
     <br><br>
-     <h3 class="blue-text text-darken-2">INGRESOS: </h3>
+     <h3 class="blue-text text-darken-2">Busqueda de pacientes: </h3>
+      <br>
+ <div class="col s12 m6 l3">
+   <div class="input-field">
+            <input id="c_apellido1" type="text" class="validate">
+            <label for="c_apellido1">Primer apellido</label>
+  </div>
+
+</div><!--Cuadricula 1--->
+ <div class="col s12 m6 l3">
+        <div class="input-field">
+          <input id="c_apellido2" type="text" class="validate">
+          <label for="c_apellido2">Segundo apellido</label>
+        </div>
+
+</div><!--Cuadricula 2--->
+
+<div class="col s12 m6 l3">
+  <div class="input-field">
+    <input id="c_documento_identificacion" type="text" class="validate">
+    <label for="c_documento_identifiacion">Documento de identificacion: </label>
+  </div>
+</div><!--Cuadricula 12--->
+
+
+
+
+<a id="btn_consulta" class="waves-effect waves-green btn  btn-floating-large pulse  blue darken-1">Consultar Datos</a>
+
+<p id="paratabla">
+
+<br><br>
+ </div><!--Cierra container---->
+
+
+
+<div class="container">
+  <div class="row">
+    <br><br>
+     <h3 class="blue-text text-darken-2">NUEVOS INGRESOS: </h3>
       <br>
  <div class="col s12 m6 l3">
    <div class="input-field">
@@ -66,16 +108,18 @@
  <div class="col s12 m6 l3">
    <div class="input-field">
      <input id="lugar_nacimiento" type="text" class="validate">
-     <label for="lugar_nacimiento">Lugar de nacimiento: </label>
+     <label for="lugar_nacimiento" ><font color="red">Lugar de nacimiento</font></label>
    </div>
  </div><!--Cuadricula 7--->
  <div class="col s12 m6 l3">
  <div class="input-field">
-  Fecha de nacimiento: <input id="fecha_nac" type="date">
+  <font color="red">Fecha de nacimiento</font> <input id="fecha_nac" type="date">
 </div>
 </div><!--Cuadricula 8--->
  <div class="col s12 m6 l3">
+   <font color="red">SEXO</font>
    <select id="sexo">
+
       <option  disabled value="" selected>Sexo</option>
          <option value="MASCULINO">Masculino</option>
          <option value="FEMENINO">Femenino</option>
@@ -137,10 +181,10 @@
 </div>
 <!--Cuadricula 16--->
 <div class="col s12 m6 l3">
-  Fecha de la asistencia medica: <input type='date' id="fecha_asistencia" >
+  Fecha de la asistencia medica: <input type='date' id="fecha_asistencia" disabled>
 </div>
 <div class="col s12 m6 l3">
-  Hora: <input type="time" id="hora">
+  Hora: <input type="time" id="hora" disabled>
 </div><!--Cuadricula 18--->
 <div class="col s12 m6 l3">
   <select id="area_urgencia">
@@ -183,7 +227,7 @@
 
 <br><br>
  </div><!--Cierra container---->
-
+<a class="btn" onclick="Materialize.toast('Llamanos a la extension 6013', 4000, 'rounded')">Necesitas ayuda?</a>
 <footer class="page-footer teal orange darken-2">
           <div class="container">
             <div class="row">

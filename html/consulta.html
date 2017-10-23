@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Consulta</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="socket.io.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+
+
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+      <!--Import materialize.css-->
+     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+  </head>
+<body>
+
+  <nav>
+ <div class="nav-wrapper teal orange darken-2">
+   <a class="brand-logo center">HOSPITAL GENERAL SAN JUAN DE DIOS</a>
+  </div>
+</nav><!--barra superior--->
+<div class="container">
+  <div class="row">
+    <br><br>
+     <h3 class="blue-text text-darken-2">Consultas: </h3>
+      <br>
+ <div class="col s12 m6 l3">
+   <div class="input-field">
+            <input id="c_apellido1" type="text" class="validate">
+            <label for="c_apellido1">Primer apellido</label>
+  </div>
+
+</div><!--Cuadricula 1--->
+ <div class="col s12 m6 l3">
+        <div class="input-field">
+          <input id="c_apellido2" type="text" class="validate">
+          <label for="c_apellido2">Segundo apellido</label>
+        </div>
+
+</div><!--Cuadricula 2--->
+
+<div class="col s12 m6 l3">
+  <div class="input-field">
+    <input id="c_documento_identificacion" type="text" class="validate">
+    <label for="c_documento_identifiacion">Documento de identificacion: </label>
+  </div>
+</div><!--Cuadricula 12--->
+
+
+
+
+<a id="btn" class="waves-effect waves-green btn  btn-floating-large pulse  blue darken-1">Enviar</a>
+
+<p id="paratabla">
+
+<br><br>
+ </div><!--Cierra container---->
+
+<footer class="page-footer teal orange darken-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Depto. Informatica 2017 </h5>
+              </div>
+           </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Copyright
+            </div>
+          </div>
+        </footer>
+
+
+
+
+ <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function() {
+ $('select').material_select();
+});
+ </script>
+  </body>
+</html>
