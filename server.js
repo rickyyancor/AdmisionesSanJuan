@@ -176,6 +176,10 @@ socket.on('Error',function(err){console.log(err);});
     });
     request.on('doneProc', function (rowCount, more, rows) {
 
+      var currentdate = new Date();
+      var datetime = "" + currentdate.getDate() + "/"+ (currentdate.getMonth()+1)  + "/"+ currentdate.getFullYear() + "";
+      data.fecha_asistencia=datetime;
+      data.hora = ""+ currentdate.getHours() + ":"+ currentdate.getMinutes() + ":" + currentdate.getSeconds();
 
 
       workbook.xlsx.readFile('reportes/Libro2.xlsx')
@@ -356,6 +360,10 @@ socket.on('Error',function(err){console.log(err);});
 
     });
     request.on('doneProc', function (rowCount, more, rows) {
+      var currentdate = new Date();
+      var datetime = "" + currentdate.getDate() + "/"+ (currentdate.getMonth()+1)  + "/"+ currentdate.getFullYear() + "";
+      data.n34=datetime;
+      data.n35 = ""+ currentdate.getHours() + ":"+ currentdate.getMinutes() + ":" + currentdate.getSeconds();
 
 
 
