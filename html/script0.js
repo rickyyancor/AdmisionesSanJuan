@@ -26,7 +26,7 @@ $(function() {
               var data = $("#fecha_nac").val();
 
               var jsondata={n1:$("#n1").val(),
-              n2:$("#n2").val(),n3:$("#n3").val(),n4:$("#n4").val(),n5:$("#n5").val(),n6:$("#n6").val(),
+              n2:$("#n2").val(),n3:$("#n3").val(),n4:$("#n4").val(),n5:$("#n5").val(),n6:$("#n6").val().toString().substring(0,46),
               n7:$("#n7").val(),
               n8:$("#n8").val(),
               n9:$("#n9").val(),

@@ -44,7 +44,7 @@ $(function() {
               dpi:$("#documento_identificacion").val(),
               contacto_emergencia:$("#caso_emergencia").val(),
               parentesco:$("#parentesco").val(),
-              direccion_contacto:$("#direccion").val(),
+              direccion_contacto:$("#direccion").val().toString().substring(0,46),
               telefono_contacto:$("#telefono").val(),
               fecha_asistencia:$("#fecha_asistencia").val(),hora:$("#hora").val(),
               area_urgencia:$("#area_urgencia").val(),

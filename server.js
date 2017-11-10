@@ -144,6 +144,7 @@ socket.on('Error',function(err){console.log(err);});
     request = new Request(cadena,function(err, rowcount) { if (err) {console.log(err);} if (rowcount) {
           datarespuesta = {}           //console.log(rowcount);
               }
+              connection.close();
     });
 
     request.on('row', function (columns) {
@@ -315,6 +316,7 @@ socket.on('Error',function(err){console.log(err);});
           i=0;
           //console.log(rowcount);
         }
+        connection.close();
     });
 
     request.on('row', function (columns) {
@@ -513,6 +515,7 @@ var results = [];
             i=0;
             console.log(rowcount);
           }
+          connection.close();
       });
       var respuestatabla="<table id='tabla_consulta'><tr><th>Apellido 1</th><th>Apellido 2</th><th>Nombre 1</th><th>Nombre 2</th><th><font color=\"red\">No. Expediente</font></th><th>DPI</th><th>Contacto/Padre</th><th>Contacto/Madre</th></tr>";
       var datarespuesta = {} // empty Object
@@ -585,7 +588,9 @@ connection.on('connect', function(err) {
     function(err) {
      if (err) {
         console.log(err);}
-    });
+
+    connection.close();
+  });
 
     request.on('row', function (columns) {
       console.log(columns[0].value.toString());
@@ -761,6 +766,7 @@ console.log("nuevo registro ingresos");
   function(err) {
    if (err) {
       console.log(err);}
+      connection.close();
   });
 
   request.on('row', function (columns) {
