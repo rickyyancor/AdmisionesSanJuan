@@ -135,11 +135,12 @@ socket.on('Error',function(err){console.log(err);});
 
     var connection = new Connection(config);
     connection.on('connect', function(err) {if (err) {console.log(err);}
+    //console.log("Expediente no: "+("00"+datos[4]).split("/")[1]);
 
     var data={};
     var results = [];
     var cadena ="SELECT * FROM provisional.dbo.Expediente ";
-    var whereselect="where apellido1 = '"+datos[0]+"' and apellido2 ='"+datos[1]+"' and no_cedula='"+datos[5]+"';";
+    var whereselect="where apellido1 = '"+datos[0]+"' and apellido2 ='"+datos[1]+"' and id_expediente="+("00"+datos[4]).split("/")[1]+";";
     cadena+=whereselect;
     request = new Request(cadena,function(err, rowcount) { if (err) {console.log(err);} if (rowcount) {
           datarespuesta = {}           //console.log(rowcount);
@@ -504,7 +505,7 @@ socket.on('Error',function(err){console.log(err);});
 
 var results = [];
       var cadena ="SELECT  apellido1,apellido2,nombre1,nombre2,no_expediente,no_cedula,nombre_padre,nombre_madre , id_expediente FROM provisional.dbo.Expediente ";
-      var whereselect="where apellido1 like '"+data.apellido1+"%' and apellido2 like '"+data.apellido2+"%' and no_cedula like '"+data.no_cedula+"%';";
+      var whereselect="where apellido1 like '"+data.apellido1+"%' and apellido2 like '"+data.apellido2+"%' and nombre1 like '"+data.nombre1+"%' and nombre2 like '"+data.nombre2+"%' and no_cedula like '"+data.no_cedula+"%';";
       cadena+=whereselect;
       request = new Request(cadena,function(err, rowcount) {
        if (err) {

@@ -5,6 +5,11 @@ $(function() {
 
         location.href="http://10.10.11.150:3000/ingreso";
     });
+    $("#btn_stickers").click(function(){
+
+        window.open("http://10.10.11.150:3080/stickers.html");
+
+    });
     $("#btn").click(function()
             {
 
@@ -70,7 +75,8 @@ $(function() {
                     {
 
                       var jsondata={apellido1:$("#c_apellido1").val(),
-                      apellido2:$("#c_apellido2").val(),no_cedula:$("#c_documento_identificacion").val()
+                      apellido2:$("#c_apellido2").val(),no_cedula:$("#c_documento_identificacion").val(),
+                      nombre1:$("#c_nombre1").val(),nombre2:$("#c_nombre2").val()
 
                     };
                       socket.emit('consultar',jsondata);
